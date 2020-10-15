@@ -19,7 +19,14 @@ if ( !defined('ABSPATH') ){
 	exit;
 };
 
+// global options variable
+$uzabila_facebook_options = get_option( 'uzabila_facebook_settings' );
+
 // load script
 require_once(plugin_dir_path( __FILE__ ).'/includes/facebook-script.php');
 // load content
 require_once(plugin_dir_path( __FILE__ ).'/includes/facebook-content.php');
+// Settings
+if (is_admin()) {
+	require_once(plugin_dir_path( __FILE__ ).'/includes/facebook-settings.php');
+};
